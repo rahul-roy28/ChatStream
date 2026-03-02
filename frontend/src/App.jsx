@@ -5,7 +5,7 @@ import ChatPage from "./pages/ChatPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import useChatStore from "./store/useChatStore";
-import axios from "../utils/axios.js";
+import axios from "axios";
 
 const App = () => {
   const { currentUser, token, setCurrentUser, logout } = useChatStore();

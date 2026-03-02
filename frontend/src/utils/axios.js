@@ -6,7 +6,8 @@ const axiosInstance = axios.create({
 });
 
 axiosInstance.interceptors.request.use((config) => {
-  const token = useChatStore.getState().token;
+  const { getState } = useChatStore;
+  const token = getState().token;
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }

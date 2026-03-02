@@ -23,10 +23,7 @@ const LoginPage = () => {
     try {
       setLoading(true);
       setError("");
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
-        form,
-      );
+      const res = await axios.post("/api/auth/login", form);
       setToken(res.data.token);
       setCurrentUser(res.data.user);
       navigate("/chat");

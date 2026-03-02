@@ -22,13 +22,10 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (!currentUser) return;
 
-    socketRef.current = io(
-      import.meta.env.VITE_BACKEND_URL || "http://localhost:5000",
-      {
-        query: { userId: currentUser._id },
-        auth: { token },
-      },
-    );
+    socketRef.current = io("https://chatstream-backend-gbmf.onrender.com", {
+      query: { userId: currentUser._id },
+      auth: { token },
+    });
 
     // Online users
     socketRef.current.on("getOnlineUsers", (users) => {

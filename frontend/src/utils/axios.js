@@ -2,7 +2,7 @@ import axios from "axios";
 import useChatStore from "../store/useChatStore";
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL || "http://localhost:5000",
+  baseURL: "https://chatstream-backend-gbmf.onrender.com",
 });
 
 axiosInstance.interceptors.request.use((config) => {

@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || "http://localhost:5173", // React frontend URL (Vite default)
+    origin: process.env.CLIENT_URL || "http://localhost:3000", // React frontend URL (Vite default)
     methods: ["GET", "POST"],
   },
 });

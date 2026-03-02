@@ -5,7 +5,7 @@ import ChatPage from "./pages/ChatPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import useChatStore from "./store/useChatStore";
-import axios from "axios";
+import axios from "./utils/axios.js";
 
 const App = () => {
   const { currentUser, token, setCurrentUser, logout } = useChatStore();
@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     if (token && !currentUser) {
       axios
-        .get("http://localhost:5000/api/auth/me", {
+        .get("/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => setCurrentUser(res.data))

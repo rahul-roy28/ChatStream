@@ -26,7 +26,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/users");
+        const res = await axios.get("/api/users");
         // Filter out current user
         const filtered = res.data.filter((u) => u._id !== currentUser._id);
         setUsers(filtered);
